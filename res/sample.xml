@@ -1,0 +1,229 @@
+<CarQuoteRequest
+	xmlns:pcq="http://HastingsDirect.com/qcore/PCQuoteEngineAPI"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<quoteHeader>
+		<aggsSource>CTM</aggsSource>
+		<aggsId>c2057b28-3988-4c38-b15f-248f7d181ec6</aggsId>
+		<timestamp>2021-10-21T09:29:59</timestamp>
+		<originOfBusiness>CTMDefaultCampaign</originOfBusiness>
+	</quoteHeader>
+	<carQuote>
+		<autoRenewal>true</autoRenewal>
+		<marketingPermissions>false</marketingPermissions>
+		<noOfCarsHousehold>1</noOfCarsHousehold>
+		<inceptionDate>2021-11-19</inceptionDate>
+		<car>
+			<abiCode>22536950</abiCode>
+			<registration>HV17MUO</registration> 			VEHICLE_REGNO
+			<make>HYUNDAI</make>
+			<bodyType>02</bodyType>
+			<yearOfRegistration>2017</yearOfRegistration> 	VEHICLE_FIRSTREGDYEAR
+			<transmission typeListName="Transmission_Ext">
+				<transmission>001</transmission> 			VEHICLE_TRANSMISSIONTYPE
+			</transmission>
+			<engineSize>1248</engineSize>
+			<model>I10 PREMIUM</model> 						VEHICLE_MODELNAME
+			<noOfDoors>5</noOfDoors>
+			<noOfSeats>5</noOfSeats>						VEHICLE_NOOFSEATS
+			<fuelType>Petrol</fuelType>
+			<carValue>5840</carValue>						VEHICLE_VALUE
+			<purchaseDate>2021-10-21</purchaseDate>			VEHICLE_PURCHASEDATE
+			<importType typeListName="ImportType_Ext">
+				<importType>no</importType>
+			</importType>
+			<importTypeDesc>No</importTypeDesc>
+			<rightHandDrive>true</rightHandDrive>			VEHICLE_LEFTORRIGHTHANDDRIVE(returns R or L)
+			<immobiliser typeListName="AlarmImmobiliser_Ext">
+				<immobiliser>92</immobiliser>
+			</immobiliser>
+			<immobiliserDesc>Factory fitted Alarm + Immobiliser</immobiliserDesc>
+			<tracker>false</tracker>							VEHICLE_TRACKERDEVICEFITTEDIND
+			<trackerDesc>Tracker not fitted</trackerDesc>
+			<overnightPostCode>SW19 5DA</overnightPostCode>
+			<parkedDaytimeData>
+				<code>H</code>
+				<description>Street away from home</description>
+			</parkedDaytimeData>
+			<parkedOvernight typeListName="KeptOvernight_Ext">
+				<parkedOvernight>H</parkedOvernight>
+			</parkedOvernight>
+			<parkedOvernightDesc>Street away from home</parkedOvernightDesc>
+			<owner typeListName="OwnerKeeper_Ext">
+				<owner>1_PR</owner>
+			</owner>
+			<ownerDesc>Policyholder</ownerDesc>
+			<registeredKeeper typeListName="OwnerKeeper_Ext">
+				<registeredKeeper>1_PR</registeredKeeper>
+			</registeredKeeper>
+			<registeredKeeperDesc>Policyholder</registeredKeeperDesc>
+			<cover>
+				<coverType typeListName="CoverageCategory_Ext">
+					<coverType>comprehensive</coverType>
+				</coverType>
+				<coverLevelDesc>Comprehensive</coverLevelDesc>
+				<classOfUse typeListName="ClassOfUse_Ext">
+					<classOfUse>04</classOfUse>
+				</classOfUse>
+				<classOfUseDesc>Social, Domestic and Pleasure Only (SDP)</classOfUseDesc>
+				<voluntaryExcess typeListName="VolExcess_Ext">
+					<voluntaryExcess>0</voluntaryExcess>
+				</voluntaryExcess>
+				<voluntaryExcessDesc>0 voluntary excess</voluntaryExcessDesc>
+				<mainUser>1</mainUser>
+				<totalMileage>12000</totalMileage>
+				<ncdGrantedYears typeListName="NCDGrantedYears_Ext">
+					<ncdGrantedYears>1</ncdGrantedYears>
+				</ncdGrantedYears>
+				<ncdGreaterZero>
+					<ncdProtect>false</ncdProtect>
+					<howNcdEarn typeListName="NCDEarnedFrom_Ext">
+						<howNcdEarn>11</howNcdEarn>
+					</howNcdEarn>
+					<howNcdEarnDesc>This vehicle or previous vehicle</howNcdEarnDesc>
+					<ncdEarnedUk>true</ncdEarnedUk>
+				</ncdGreaterZero>
+				<insurancePaymentType typeListName="InsurancePaymentType_Ext">
+					<insurancePaymentType>1</insurancePaymentType>
+				</insurancePaymentType>
+			</cover>
+		</car>
+		<drivers>
+			<policyholder>
+				<name>
+					<fullName>
+						<title typeListName="NamePrefix">
+							<title>004</title>
+						</title>
+						<titleDesc>Mrs</titleDesc>
+						<firstName>Sirkka-Maija</firstName>
+						<lastName>Kariluoma-Boom</lastName>
+					</fullName>
+				</name>
+				<driverId>1</driverId>
+				<dateOfBirth>1969-10-10</dateOfBirth>
+				<maritalStatus typeListName="MaritalStatus">
+					<maritalStatus>M</maritalStatus>
+				</maritalStatus>
+				<maritalStatusDesc>Married</maritalStatusDesc>
+				<address>
+					<addressLine1>17 Lancaster Road</addressLine1>
+					<addressLine2 />
+					<addressLine3 />
+					<town>London</town>
+					<county>Surrey</county>
+					<postCode>SW19 5DA</postCode>
+				</address>
+				<ukResident>2008-08-01</ukResident>
+				<marketingPreference>
+					<homeOwner>false</homeOwner>
+					<anyChildrenUnder16>false</anyChildrenUnder16>
+				</marketingPreference>
+				<employment>
+					<isPrimary>true</isPrimary>
+					<employmentStatusCode typeListName="FullTimeEmpStatus_Ext">
+						<employmentStatusCode>E</employmentStatusCode>
+					</employmentStatusCode>
+					<employmentStatusDesc>Employed</employmentStatusDesc>
+					<employmentOccupationCode typeListName="OccupationType_Ext">
+						<employmentOccupationCode>52D</employmentOccupationCode>
+					</employmentOccupationCode>
+					<employmentOccupationDesc>Associate Director</employmentOccupationDesc>
+					<employmentBusinessCode typeListName="BusinessType_Ext">
+						<employmentBusinessCode>431</employmentBusinessCode>
+					</employmentBusinessCode>
+					<employmentBusinessDesc>Insurance Broker</employmentBusinessDesc>
+				</employment>
+				<licence>
+					<number>KARIL660109SH9AP</number>
+					<type typeListName="LicenceType_Ext">
+						<type>F_FA</type>
+					</type>
+					<typeDesc>Full UK - Auto</typeDesc>
+					<lengthHeld>2009-10-21</lengthHeld>
+				</licence>
+				<myLicenceIndicator>true</myLicenceIndicator>
+				<useOtherVehicle typeListName="AccessOtherVeh_Ext">
+					<useOtherVehicle>no</useOtherVehicle>
+				</useOtherVehicle>
+				<useOtherVehicleDesc>No access to any other vehicles</useOtherVehicleDesc>
+				<primaryEmail>smkb001@gmail.com</primaryEmail>
+				<medicalConditions typeListName="DVLAMedicalCondition_Ext">
+					<medicalConditions>99_NO</medicalConditions>
+				</medicalConditions>
+				<medicalConditionsDesc>No</medicalConditionsDesc>
+				<nonMotoringConvictions>false</nonMotoringConvictions>
+				<isPolicyDeclinedForDrivers>false</isPolicyDeclinedForDrivers>
+				<specialTermsImposed typeListName="SpecialTerms_Ext" />
+			</policyholder>
+			<additionalDriver>
+				<name>
+					<title typeListName="NamePrefix">
+						<title>003_Mr</title>
+					</title>
+					<titleDesc>Mr</titleDesc>
+					<firstName>Wendell</firstName>
+					<lastName>Boom</lastName>
+				</name>
+				<driverId>2</driverId>
+				<dateOfBirth>1970-06-11</dateOfBirth>
+				<maritalStatus typeListName="MaritalStatus">
+					<maritalStatus>M</maritalStatus>
+				</maritalStatus>
+				<maritalStatusDesc>Married</maritalStatusDesc>
+				<relationship typeListName="RelationToProposer_Ext">
+					<relationship>S</relationship>
+				</relationship>
+				<relationshipDesc>Spouse</relationshipDesc>
+				<ukResident>2008-08-01</ukResident>
+				<employment>
+					<isPrimary>true</isPrimary>
+					<employmentStatusCode typeListName="FullTimeEmpStatus_Ext">
+						<employmentStatusCode>E</employmentStatusCode>
+					</employmentStatusCode>
+					<employmentStatusDesc>Employed</employmentStatusDesc>
+					<employmentOccupationCode typeListName="OccupationType_Ext">
+						<employmentOccupationCode>50D</employmentOccupationCode>
+					</employmentOccupationCode>
+					<employmentOccupationDesc>Web Developer</employmentOccupationDesc>
+					<employmentBusinessCode typeListName="BusinessType_Ext">
+						<employmentBusinessCode>904</employmentBusinessCode>
+					</employmentBusinessCode>
+					<employmentBusinessDesc>Information Technology</employmentBusinessDesc>
+				</employment>
+				<licence>
+					<number>BOOM9706110WR9VK</number>
+					<type typeListName="LicenceType_Ext">
+						<type>F_FM</type>
+					</type>
+					<typeDesc>Full UK - Manual</typeDesc>
+					<lengthHeld>2020-10-21</lengthHeld>
+				</licence>
+				<myLicenceIndicator>true</myLicenceIndicator>
+				<useOtherVehicle typeListName="AccessOtherVeh_Ext">
+					<useOtherVehicle>no</useOtherVehicle>
+				</useOtherVehicle>
+				<useOtherVehicleDesc>No access to any other vehicles</useOtherVehicleDesc>
+				<medicalConditions typeListName="DVLAMedicalCondition_Ext">
+					<medicalConditions>99_NO</medicalConditions>
+				</medicalConditions>
+				<medicalConditionsDesc>No</medicalConditionsDesc>
+				<nonMotoringConvictions>false</nonMotoringConvictions>
+			</additionalDriver>
+		</drivers>
+		<extraQuestions>
+			<vanInsured>false</vanInsured>
+			<bikeInsured>false</bikeInsured>
+			<homeInsured>false</homeInsured>
+		</extraQuestions>
+		<additionalVariablesString>
+			<question>
+				<id>CTM001</id>
+				<value>1</value>
+			</question>
+			<question>
+				<id>CTM002</id>
+				<value>Y</value>
+			</question>
+		</additionalVariablesString>
+	</carQuote>
+</CarQuoteRequest>
