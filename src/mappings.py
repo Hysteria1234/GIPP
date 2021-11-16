@@ -1,3 +1,5 @@
+from src.ABI import read_csv
+
 title = {
     "3": "Mr",
     "4": "MRS",
@@ -172,6 +174,20 @@ how_ncd = {
     "18": "Policyholders Civil Partner",
     "14": "Spouse Of Policyholder"
 }
+
+employment_status = {
+    "V": "Voluntary Work",
+    "E": "Employed",
+    "F": "In Full Or Part Time Education",
+    "H": "Household Duties",
+    "S": "Self Employed",
+    "R": "Retired",
+    "U": "Unemployed",
+    "I": "Independent Means",
+    "N": "Not employed due to disability"
+}
+business_dict = read_csv("../res/ABI_business_codes.csv")
+occupation_dict = read_csv("../res/ABI_occupation_codes.csv")
 type_of_address = {}
 primary_phoneno = {}
 fuel_type = {}

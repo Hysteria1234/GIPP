@@ -32,6 +32,49 @@ column_tag_mappings = {
     # "cover": ""
 }
 
+driver_tag_mappings = {
+    "relationship": "DRIVER_RELATIONSHIPTOPROPOSER",
+    "dateOfBirth": "DRIVER_DATEOFBIRTH",
+    "maritalStatus": "DRIVER_MARITALSTATUS",
+    "DRIVER_LICENCEDATE": "DRIVER_LICENCEDATE",
+    "ukResident":  "DRIVER_UKRESIDENCYDATE",
+    "useOtherVehicle": "DRIVER_OTHERVEHICLEOWNEDIND",
+    "driverId": "DRIVER_PRN",
+    "medicalConditions": "DRIVER_MEDICALCONDITIONIND",
+    "number": "DRIVER_LICENCENUMBER",
+    "primaryEmail": "PROPOSERPOLICYHOLDER_EMAIL",
+    "ukResident": "DRIVER_NOOFYEARSUKRESIDENCY",
+    "titleDesc": "titleDesc"
+}
+
+marketing_mapping = {
+    "homeOwner": "DRIVER_HOMEOWNERIND",
+}
+licence_mapping = {
+    "type": "DRIVER_LICENCETYPE",
+    "lengthHeld": "DRIVER_LICENCEDATE"
+
+}
+address_mapping = {
+    "addressLine1": "PROPOSERPOLICYHOLDER_ADDRESSLINE1",
+    "postCode": "PROPOSERPOLICYHOLDER_POSTCODEFULL"
+}
+
+name_mapping = {
+    "lastName": "DRIVER_SURNAME",
+    "firstName": "DRIVER_FORENAMEINITIAL1",
+    "title": "DRIVER_TITLE"
+}
+
+# everything has desc
+employment_mapping = {
+    "employmentStatusCode": "OCCUPATION_EMPLOYMENTTYPE",
+    "employmentOccupationCode": "OCCUPATION_CODE",
+    "employmentBusinessCode": "OCCUPATION_EMPLOYERSBUSINESS",
+    # "employmentOccupationDesc": "OCCUPATION_DESCRIPTION",
+    # "employmentBusinessDesc": "OCCUPATION_BUSINESSDESC",
+    #employmentStatusDesc = "OCCUPATION_DESCRIPTION"
+}
 cover_tag_mappings = {
     "coverType": "COVER_CODE",
     "classOfUse": "Uses_AbiCode",
@@ -46,6 +89,7 @@ ncd_tag_mappings = {
     "howNcdEarn": "Ncd_ClaimedEntitlementReason",#?
     "ncdEarnedUk": "Ncd_ClaimedCountryEarned",#?
 }
+
 code_desc = {
         "title": title,
         "maritalStatus": marital_status,
@@ -62,5 +106,9 @@ code_desc = {
         "owner": owner,
         "coverType": cover_type,
         "voluntaryExcess": voluntary_excess,
-        "howNcdEarn": how_ncd
+        "howNcdEarn": how_ncd,
+        "employmentStatusCode": employment_status,
+        "employmentOccupationCode": occupation_dict,
+        "employmentBusinessCode": business_dict
+
 }
