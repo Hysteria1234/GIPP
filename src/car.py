@@ -94,4 +94,6 @@ if __name__ == '__main__':
     populated_dict = add_database_values_to_dict(values, ncd_tag_mappings, desc)
     add_to_xml(item, populated_dict)
 
+    tree.write("../hello.xml")
+
     # fix 1 step

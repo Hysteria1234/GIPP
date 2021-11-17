@@ -9,27 +9,36 @@ column_tag_mappings = {
     "transmission": "VEHICLE_TRANSMISSIONTYPE",
     "engineSize": "VEHICLE_CUBICCAPACITY",
     "model": "VEHICLE_MODELNAME",
-    # "noOfDoors": "",
     "noOfSeats": "VEHICLE_NOOFSEATS",
     "fuelType": "VEHICLE_TYPEOFFUEL",
     "carValue": "VEHICLE_VALUE",
     "purchaseDate": "VEHICLE_PURCHASEDATE",
     "importType": "VEHICLE_PERSONALIMPORTIND",
-    # "importTypeDesc": "",
     "rightHandDrive": "VEHICLE_LEFTORRIGHTHANDDRIVE",
     "immobiliser": "SECURITY_MAKEMODEL",
-    # "immobiliserDesc": "",
     "tracker": "VEHICLE_TRACKERDEVICEFITTEDIND",
-    # "trackerDesc": "",
     "overnightPostCode": "VEHICLE_POSTCODEFULL",
     "parkedDaytimeData": "VEHICLE_VEHICLEKEPTDAYTIME",
     "parkedOvernight": "VEHICLE_LOCATIONKEPTOVERNIGHT",
-    # "parkedOvernightDesc": "",
     "owner": "VEHICLE_OWNERSHIP",
-    # "ownerDesc": "",
     "registeredKeeper": "VEHICLE_KEEPER",
-    # "registeredKeeperDesc": "",
-    # "cover": ""
+}
+
+convictions_mapping = {
+    "convictionCode": "Conviction_Code",
+    "banLength": "Conviction_SuspensionPeriod",
+    "date": "Conviction_Date",
+    "licencePoints": "Conviction_PenaltyPts"
+}
+
+claim_mapping = {
+    "type": "Claim_ClaimType",
+    "date": "Claim_Date",
+    "cost": "Claim_CostsTotal",
+    "ncdAffected": "Claim_NcdLostInd",
+    "fault": "Claim_DriverAtFaultInd",
+    "claimOnRecentPolicy": "Claim_CurrentPolicyInd",
+    "source": "Claim_ClaimStatus"
 }
 
 driver_tag_mappings = {
@@ -44,7 +53,8 @@ driver_tag_mappings = {
     "number": "DRIVER_LICENCENUMBER",
     "primaryEmail": "PROPOSERPOLICYHOLDER_EMAIL",
     "ukResident": "DRIVER_NOOFYEARSUKRESIDENCY",
-    "titleDesc": "titleDesc"
+    "titleDesc": "titleDesc",
+    "nonMotoringConvictions": "DRIVER_NONMOTORINGCONVICTIONIND"
 }
 
 marketing_mapping = {
@@ -68,12 +78,10 @@ name_mapping = {
 
 # everything has desc
 employment_mapping = {
+    "isPrimary": "Occupation_FullTimeEmploymentInd",
     "employmentStatusCode": "OCCUPATION_EMPLOYMENTTYPE",
     "employmentOccupationCode": "OCCUPATION_CODE",
     "employmentBusinessCode": "OCCUPATION_EMPLOYERSBUSINESS",
-    # "employmentOccupationDesc": "OCCUPATION_DESCRIPTION",
-    # "employmentBusinessDesc": "OCCUPATION_BUSINESSDESC",
-    #employmentStatusDesc = "OCCUPATION_DESCRIPTION"
 }
 cover_tag_mappings = {
     "coverType": "COVER_CODE",

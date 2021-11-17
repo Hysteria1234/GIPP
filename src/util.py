@@ -14,7 +14,7 @@ import snowflake.connector
 # headers=headers) content = MD.parseString(response.text).toprettyxml() content = et.fromstring(content) return
 # content
 def create_select_stmt(tag_list, used_dict):
-    """This method creates a select statement foe the sql statement that needs to be run
+    """This method creates a select statement from the sql statement that needs to be run
     input - Takes the list of tags that need a column name """
     ordered_columns = []
     b = ","
@@ -57,7 +57,8 @@ def add_to_xml(tree_sub, final_mapping):
     for driver_tags in tree_sub:
         if driver_tags.tag in final_mapping:
             if len(driver_tags) == 1:
-                print("Layer")
+                for i in driver_tags:
+                    i.text = final_mapping[driver_tags.tag]
             elif len(driver_tags) == 0:
                 driver_tags.text = final_mapping[driver_tags.tag]
             else:
