@@ -105,6 +105,12 @@ def add_database_values_to_dict(extracted_values, dict_type, desc_list):
         add_desc_map(final_mapping, desc_list)
     return final_mapping
 
+def add_database_values_to_dict1(extracted_values, desc_list):
+    """This methods add all the car values to the dict to then add to the respective tags in the xml
+    input - takes the extracted values from the snowflake database"""
+    if len(desc_list) > 0:
+        add_desc_map(extracted_values, desc_list)
+
 
 def one_for_all(item, desc_items, appropriate_mapping):
     list_of_tags = []
@@ -115,6 +121,22 @@ def one_for_all(item, desc_items, appropriate_mapping):
     values = ["1", "2", "3"] # run sql which will return a list
     populated_dict = add_database_values_to_dict(values, appropriate_mapping, desc_items)
     add_to_xml(item, populated_dict)
+
+
+def one_for_all1(item, desc_items, final_map):
+    list_of_tags = []
+    for driver_tags in item:
+        list_of_tags.append(driver_tags.tag)
+
+    add_database_values_to_dict1(final_map, desc_items)
+    add_to_xml(item, final_map)
+
+
+def delete_empty_tags(z):
+    bal=[]
+    for i in z:
+        print(i)
+        z.remove(i)
 
 
 # def extract(tree, item):
@@ -164,7 +186,13 @@ def one_for_all(item, desc_items, appropriate_mapping):
 
 if __name__ == '__main__':
     print("hello")
-    # h = extract(tree, "car")
+
+    h = et.parse("../res/sample.xml")
+    f = get_tree_tags(h, "car")
+    for n in f:
+        print(n.tag)
+    delete_empty_tags(f)
+    h.write("../empty.xml")
     # for j in h:
     #     print(j.tag)
     # ctx = snowflake.connector.connect(

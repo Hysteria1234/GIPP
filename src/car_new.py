@@ -2,6 +2,41 @@
 from util import *
 
 
+dict_check = {
+    "abiCode": "48510205",
+    "registration": "YK57VFE",
+    # "make": "",
+    "bodyType": "02",
+    "yearOfRegistration": "2007",
+    "transmission": "002",
+    "engineSize": "1490",
+    "model": "SWIFT GLX VVTS",
+    "noOfSeats": "4",
+    "fuelType": "002",
+    "carValue": "1500",
+    "purchaseDate": "12/03/2014",
+    "importType": "N",
+    "rightHandDrive": "R",
+    "immobiliser": "92",
+    "tracker": "N",
+    "overnightPostCode": "NR27 9LB",
+    "parkedDaytimeData": "NULL",
+    "parkedOvernight": "4",
+    "owner": "1",
+    "registeredKeeper": "1",
+    "coverType": "01",
+    "classOfUse": "04",
+    "voluntaryExcess": "500",
+    "mainUser": "1",
+    "totalMileage": "7000",
+    "ncdGrantedYears": "2",  # ?
+    "insurancePaymentType": "debit",  # ?
+    "ncdProtect": "NCD_GRANTEDPROTECTEDIND",#?
+    "howNcdEarn": "11",#?
+    "ncdEarnedUk": "GB"#?
+}
+
+
 def check_for_layer(tree_tag):
     """This method is used for finding the extra indented layer in tree tags
     input - tree tag
@@ -43,19 +78,39 @@ def sql_stmt_ncd_row(lc):
     return extracted_values[0]
 
 
-if __name__ == '__main__':
-    tree = et.parse("../res/sample.xml")
+def main_car(tree):
     item = get_tree_tags(tree, "car")
     # Add the descriptions
     desc = ['importTypeDesc', 'immobiliserDesc', 'trackerDesc', 'parkedOvernightDesc', 'ownerDesc']
-    one_for_all(item, desc, driver_tag_mappings)
+    one_for_all1(item, desc, column_tag_mappings, dict_check)
 
     # cover stuff
     cover = get_tree_tags(item, "cover")
     desc = ["coverLevelDesc", "classOfUseDesc", "voluntaryExcessDesc"]
-    one_for_all(item, desc, driver_tag_mappings)
+    one_for_all(item, desc, cover_tag_mappings)
 
     ncd_greater = get_tree_tags(item, "ncdGreaterZero")
     desc = ["howNcdEarnDesc"]
-    one_for_all(item, desc, driver_tag_mappings)
+    one_for_all(item, desc, ncd_tag_mappings)
+
+
+def main_car1(tree):
+    item = get_tree_tags(tree, "car")
+    # Add the descriptions
+    desc = ['importTypeDesc', 'immobiliserDesc', 'trackerDesc', 'parkedOvernightDesc', 'ownerDesc']
+    one_for_all1(item, desc, dict_check)
+
+    # cover stuff
+    cover = get_tree_tags(item, "cover")
+    desc = ["coverLevelDesc", "classOfUseDesc", "voluntaryExcessDesc"]
+    one_for_all1(cover, desc, dict_check)
+
+    ncd_greater = get_tree_tags(item, "ncdGreaterZero")
+    desc = ["howNcdEarnDesc"]
+    one_for_all1(ncd_greater, desc, dict_check)
+
+
+if __name__ == '__main__':
+    f = et.parse("../res/sample.xml")
+    main_car(f)
     # fix 1 step

@@ -24,6 +24,12 @@ column_tag_mappings = {
     "registeredKeeper": "VEHICLE_KEEPER",
 }
 
+name_mapping = {
+    "title": "DRIVER_TITLE",
+    "firstName": "DRIVER_FORENAMEINITIAL1",
+    "lastName": "DRIVER_SURNAME"
+}
+
 convictions_mapping = {
     "convictionCode": "Conviction_Code",
     "banLength": "Conviction_SuspensionPeriod",
@@ -53,7 +59,6 @@ driver_tag_mappings = {
     "number": "DRIVER_LICENCENUMBER",
     "primaryEmail": "PROPOSERPOLICYHOLDER_EMAIL",
     "ukResident": "DRIVER_NOOFYEARSUKRESIDENCY",
-    "titleDesc": "titleDesc",
     "nonMotoringConvictions": "DRIVER_NONMOTORINGCONVICTIONIND"
 }
 

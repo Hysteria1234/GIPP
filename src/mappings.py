@@ -88,7 +88,14 @@ class_of_use = {
     "4": "Business use (PH + Spouse / Civil Partner)",
     "N": "Business use (spouse / Civil Parnter)",
     "2": "Business use by all drivers",
-    "3": "Commercial travelling"
+    "3": "Commercial travelling",
+    "0S": "Social only",
+    "0C": "Social inc. Comm",
+    "01": "Business Use (PH)",
+    "04": "Business use (PH + Spouse / Civil Partner)",
+    "0N": "Business use (spouse / Civil Parnter)",
+    "02": "Business use by all drivers",
+    "03": "Commercial travelling",
 }
 
 relationship_proposer = {
