@@ -219,3 +219,72 @@ if __name__ == '__main__':
 
     #car_handler(h)
     # populate_cover(h)
+
+#####################################################################################
+
+con = snowflake.connector.connect(
+	user='',
+    password='',
+    account='hstsf01.eu-west-1')
+cs = con.cursor() # cursor
+dcs = con.cursor(DictCursor) # dict cursor
+
+# Configure env
+config = """
+use role FG_RETAILPRICING;
+use warehouse DEV_RETAILPRICING_XSMALL;
+use database PRD_RAW_DB;
+use schema QUOTES_PUBLIC;
+"""
+cs.execute(config)
+
+t = {}
+try:
+    qstring = f"""
+    -- Fields
+    select v.VEHICLE_MODEL as abiCode,
+    v.VEHICLE_REGNO as registration,
+    v.VEHICLE_BODYTYPE as bodyType,
+    v.VEHICLE_FIRSTREGDYEAR as yearOfRegistration,
+    v.VEHICLE_TRANSMISSIONTYPE as transmission,
+    v.VEHICLE_CUBICCAPACITY as  engineSize,
+    v.VEHICLE_MODELNAME as model,
+    v.VEHICLE_NOOFSEATS as noOfSeats,
+    v.VEHICLE_TYPEOFFUEL as fuelType,
+    v.VEHICLE_VALUE as carValue,
+    v.VEHICLE_PURCHASEDATE as purchaseDate,
+    v.VEHICLE_PERSONALIMPORTIND as importType,
+    v.VEHICLE_LEFTORRIGHTHANDDRIVE as rightHandDrive,
+    s.SECURITY_MAKEMODEL as immobiliser,
+    v.VEHICLE_TRACKERDEVICEFITTEDIND as tracker,
+    v.VEHICLE_POSTCODEFULL as overnightPostCode,
+    v.VEHICLE_VEHICLEKEPTDAYTIME as parkedDaytimeData,
+    v.VEHICLE_LOCATIONKEPTOVERNIGHT as parkedOvernight,
+    v.VEHICLE_OWNERSHIP as owner,
+    v.VEHICLE_KEEPER as registeredKeeper,
+    c.COVER_CODE as coverType,
+    u.USES_ABICODE as classOfUse,
+    c.COVER_VOLXSAMT as voluntaryExcess,
+    c.COVER_VEHPRN as mainUser,
+    v.VEHICLE_ANNUALMILEAGE as totalMileage,
+    n.NCD_CLAIMEDYEARS as ncdGrantedYears,
+    n.NCD_GRANTEDPROTECTEDIND as ncdProtect,
+    n.NCD_CLAIMEDENTITLEMENTREASON as howNcdEarn,
+    n.NCD_CLAIMEDCOUNTRYEARNED as ncdEarnedUk
+    -- Tables
+    from PRD_RAW_DB.QUOTES_PUBLIC.VW_POLARIS_VEH_REQ_VEHICLE v
+    inner join PRD_RAW_DB.QUOTES_PUBLIC.VW_POLARIS_VEH_REQ_SECURITY s on v.QUOTE_REFERENCE = s.QUOTE_REFERENCE
+    inner join PRD_RAW_DB.QUOTES_PUBLIC.VW_POLARIS_VEH_REQ_NCD n on v.QUOTE_REFERENCE = n.QUOTE_REFERENCE
+    inner join PRD_RAW_DB.QUOTES_PUBLIC.VW_POLARIS_VEH_REQ_USES u on v.QUOTE_REFERENCE = u.QUOTE_REFERENCE
+    inner join PRD_RAW_DB.QUOTES_PUBLIC.VW_POLARIS_VEH_REQ_COVER c on v.QUOTE_REFERENCE = c.QUOTE_REFERENCE
+    -- Conditions
+    where v.quote_reference = '0038223687'
+    -- might also need veh_prn = 1?
+    order by v.agghub_id asc
+    limit 1;
+    """
+    dcs.execute(qstring) # Should reurn a dict
+    for key, value in dcs.items():
+        t[key] = value
+except:
+    print("Car search error")
